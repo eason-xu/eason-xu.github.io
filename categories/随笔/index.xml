@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on 徐医生的博客</title>
+    <link>http://eason-xu.github.io/categories/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on 徐医生的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2015. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 11 Oct 2015 08:24:28 +0800</lastBuildDate>
+    <atom:link href="http://eason-xu.github.io/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>开博第一篇</title>
+      <link>http://eason-xu.github.io/posts/hugo/</link>
+      <pubDate>Sun, 11 Oct 2015 08:24:28 +0800</pubDate>
+      
+      <guid>http://eason-xu.github.io/posts/hugo/</guid>
+      <description>&lt;p&gt;在家养病，没事在github上开个博客，以后有想法会在这更新。
+工具使用的是&lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt;，一个小巧、快速的静态页面生成引擎，参考了这篇教程&lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
