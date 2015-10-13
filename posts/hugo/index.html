@@ -64,17 +64,19 @@
 <p>步骤如下：</p>
 
 <ol>
-<li>下载<a href="https://github.com/spf13/hugo/releases/latest">Hugo</a>并安装，然后将hugo加入系统PATH中。（可参考<a href="https://gohugo.io/overview/installing/">Installing Hugo</a>）</li>
-<li>在Github中创建一个 <code>&lt;your-project&gt;-hugo</code> 的repository ，用于保存Hugo的内容。</li>
-<li>在Github中创建一个 <code>&lt;username&gt;.github.io</code> 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。</li>
-<li><code>git clone &lt;&lt;your-project&gt;-hugo-url&gt; &amp;&amp; cd &lt;your-project&gt;-hugo</code></li>
-<li>本地调试：<code>hugo server --watch</code></li>
-<li>调试无误后，ctrl+c结束调试。<code>rm -rf public</code></li>
-<li><code>git submodule add git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code>。如果不是第一次提交，则使用<code>git submodule update --init --recursive</code>。</li>
-<li>执行<code>deploy.sh &quot;Your optional commit message&quot;</code></li>
+<li>1. 下载<a href="https://github.com/spf13/hugo/releases/latest">Hugo</a>并安装，然后将hugo加入系统PATH中。（可参考<a href="https://gohugo.io/overview/installing/">Installing Hugo</a>）</li>
+<li>2. 在Github中创建一个 <code>&lt;your-project&gt;-hugo</code> 的repository ，用于保存Hugo的内容。</li>
+<li>3. 在Github中创建一个 <code>&lt;username&gt;.github.io</code> 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。</li>
+<li>4. <code>git clone &lt;&lt;your-project&gt;-hugo-url&gt; &amp;&amp; cd &lt;your-project&gt;-hugo</code></li>
+<li>5. 本地调试：<code>hugo server --watch</code></li>
+<li>6. 调试无误后，ctrl+c结束调试。<code>rm -rf public</code></li>
+<li>7. <code>git submodule add git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code>。如果不是第一次提交，则使用<code>git submodule update --init --recursive</code>。</li>
+<li>8. 执行<code>deploy.sh &quot;Your optional commit message&quot;</code></li>
 </ol>
 
 <p>稍等片刻，就可以在<a href="http://username.github.io/">http://username.github.io/</a>看到你的博客了。</p>
+
+<p>最后，也不要忘记了提交hugo博客的修改。</p>
 
         </section>
     </div>
