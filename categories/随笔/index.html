@@ -69,7 +69,7 @@
       <div class="meta">Fri, Oct 9, 2015</div>
     </header>
 
-    在家养病，没事在github上开个博客，以后有想法会在这更新。 工具使用的是Hugo，一个小巧、快速的静态页面生成引擎，参考了这篇教程Hosting on GitHub Pages。 步骤如下： 下载Hugo并安装，然后将hugo加入系统PATH中。（可参考Installing Hugo） 在Github中创建一个 &lt;your-project&gt;-hugo 的repository ，用于保存Hugo的内容。 在Github中创建一个 &lt;username&gt;.github.io 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。 git clone &lt;&lt;your-project&gt;-hugo-url&gt; &amp;&amp; cd &lt;your-project&gt;-hugo 本地调试：hugo server --watch 调试无误后，ctrl+c结束调试。rm -rf public git submodule add git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public。如果不是第一次提交，则使用git submodule update --init --recursive。 执行deploy.sh &quot;Your optional commit message&quot; 稍等片刻，就可以在http://username.github.io/看到你的博客了。 最后，也不要忘记了提交hugo博客的修改。
+    在家养病，没事在github上开个博客，以后有想法会在这更新。 工具使用的是Hugo，一个小巧、快速的静态页面生成引擎，参考了这篇教程Hosting on GitHub Pages。 步骤如下： 下载Hugo并安装，然后将hugo加入系统PATH中。（可参考Installing Hugo） 在Github中创建一个 &lt;your-project&gt;-hugo 的repository ，用于保存Hugo的内容。 在Github中创建一个 &lt;username&gt;.github.io 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。 git clone &lt;&lt;your-project&gt;-hugo-url&gt; &amp;&amp; cd &lt;your-project&gt;-hugo 本地调试：hugo server --watch 调试无误后，ctrl+c结束调试。rm -rf public(Linux) / rmdir /S/Q public(Windows) git submodule add git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public。如果不是第一次提交，则使用git submodule update --init --recursive。 执行deploy.sh &quot;Your optional commit message&quot; 稍等片刻，就可以在http://username.github.io/看到你的博客了。 最后，也不要忘记了提交hugo博客的修改。注意，必须先提交public的内容，再提交hugo的内容
     <footer>
         <a href='http://eason-xu.github.io/posts/hugo/'><nobr>Read more →</nobr></a>
     </footer>
