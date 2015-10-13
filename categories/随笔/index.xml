@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2015. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 11 Oct 2015 08:24:28 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2015 20:24:28 +0800</lastBuildDate>
     <atom:link href="http://eason-xu.github.io/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>开博第一篇</title>
       <link>http://eason-xu.github.io/posts/hugo/</link>
-      <pubDate>Sun, 11 Oct 2015 08:24:28 +0800</pubDate>
+      <pubDate>Fri, 09 Oct 2015 20:24:28 +0800</pubDate>
       
       <guid>http://eason-xu.github.io/posts/hugo/</guid>
       <description>&lt;p&gt;在家养病，没事在github上开个博客，以后有想法会在这更新。&lt;/p&gt;
@@ -23,14 +23,14 @@
 &lt;p&gt;步骤如下：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;1. 下载&lt;a href=&#34;https://github.com/spf13/hugo/releases/latest&#34;&gt;Hugo&lt;/a&gt;并安装，然后将hugo加入系统PATH中。（可参考&lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Installing Hugo&lt;/a&gt;）&lt;/li&gt;
-&lt;li&gt;2. 在Github中创建一个 &lt;code&gt;&amp;lt;your-project&amp;gt;-hugo&lt;/code&gt; 的repository ，用于保存Hugo的内容。&lt;/li&gt;
-&lt;li&gt;3. 在Github中创建一个 &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。&lt;/li&gt;
-&lt;li&gt;4. &lt;code&gt;git clone &amp;lt;&amp;lt;your-project&amp;gt;-hugo-url&amp;gt; &amp;amp;&amp;amp; cd &amp;lt;your-project&amp;gt;-hugo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;5. 本地调试：&lt;code&gt;hugo server --watch&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;6. 调试无误后，ctrl+c结束调试。&lt;code&gt;rm -rf public&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;7. &lt;code&gt;git submodule add git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git public&lt;/code&gt;。如果不是第一次提交，则使用&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;8. 执行&lt;code&gt;deploy.sh &amp;quot;Your optional commit message&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;下载Hugo并安装，然后将hugo加入系统PATH中。（可参考&lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Installing Hugo&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;在Github中创建一个 &lt;code&gt;&amp;lt;your-project&amp;gt;-hugo&lt;/code&gt; 的repository ，用于保存Hugo的内容。&lt;/li&gt;
+&lt;li&gt;在Github中创建一个 &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone &amp;lt;&amp;lt;your-project&amp;gt;-hugo-url&amp;gt; &amp;amp;&amp;amp; cd &amp;lt;your-project&amp;gt;-hugo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;本地调试：&lt;code&gt;hugo server --watch&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调试无误后，ctrl+c结束调试。&lt;code&gt;rm -rf public&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git submodule add git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git public&lt;/code&gt;。如果不是第一次提交，则使用&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;执行&lt;code&gt;deploy.sh &amp;quot;Your optional commit message&amp;quot;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;稍等片刻，就可以在&lt;a href=&#34;http://username.github.io/&#34;&gt;http://username.github.io/&lt;/a&gt;看到你的博客了。&lt;/p&gt;
