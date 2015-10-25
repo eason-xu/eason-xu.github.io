@@ -7,8 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2015. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 11 Oct 2015 09:31:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2015 22:10:15 +0800</lastBuildDate>
     <atom:link href="http://eason-xu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MySQL Timestamp类型的一点知识</title>
+      <link>http://eason-xu.github.io/posts/mysql-timestamp/</link>
+      <pubDate>Sun, 25 Oct 2015 22:10:15 +0800</pubDate>
+      
+      <guid>http://eason-xu.github.io/posts/mysql-timestamp/</guid>
+      <description>&lt;p&gt;平时在MySQL中要保存时间值，一般都选datetime类型，所以对timestamp类型就不太关心。最近工作中碰到了timestamp，所以稍微查了一下timestamp的相关知识，在此稍作记录。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先，datetime和timestamp的数值范围不同。datetime是8位，表示的时间范围从‘1000-01-01 00:00:00’到‘9999-12-31 23:59:59’。timestamp是4位，表示的时间范围从‘1970-01-01 00:00:01’ UTC到‘2038-01-19 03:14:07’ UTC。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;其次，MySQL会将timestamp类型的值转换成相对于UTC时区进行存储，在检索时再转回当前时区（MySQL Server设置的时区）的值进行展示。所以当MySQL Server的时区设置变化时，timestamp类型的检索结果也会变化。而datetime类型的值不会变化。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果想要datetime和timestamp类型insert和update时都可以自动设置为当前时间，可以同时设置 &lt;code&gt;DEFAULT CURRENT_TIMESTAMP&lt;/code&gt; 和 &lt;code&gt;ON UPDATE CURRENT_TIMESTAMP&lt;/code&gt; 两个属性。前者保证了insert时为当前时间，后者保证每次更新时都会将对应字段修改为当前时间。设置方法如下，两个属性不分先后顺序：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;CREATE TABLE t1 (
+  ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  dt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Markdown语法</title>
@@ -769,7 +792,7 @@ _   底线
 
 &lt;p&gt;稍等片刻，就可以在&lt;a href=&#34;http://username.github.io/&#34;&gt;http://username.github.io/&lt;/a&gt;看到你的博客了。&lt;/p&gt;
 
-&lt;p&gt;最后，也不要忘记了提交hugo博客的修改。&lt;strong&gt;注意，必须先提交public的内容，再提交hugo的内容&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;最后，也不要忘记了提交hugo博客的修改。&lt;strong&gt;注意，必须先提交public的内容，再提交hugo的内容&lt;/strong&gt;。&lt;/p&gt;
 </description>
     </item>
     

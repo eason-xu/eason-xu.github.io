@@ -7,8 +7,8 @@
 <head>
     <meta charset="utf-8">
     <base href="http://eason-xu.github.io">
-    <title> 开博第一篇 </title>
-    <link rel="canonical" href="http://eason-xu.github.io/posts/hugo/">
+    <title> MySQL Timestamp类型的一点知识 </title>
+    <link rel="canonical" href="http://eason-xu.github.io/posts/mysql-timestamp/">
     
 
 <link rel="stylesheet" href="http://eason-xu.github.io/css/poole.css">
@@ -54,29 +54,23 @@
 
     
     <div class="container content">
-      <h1 class="post-title">开博第一篇</h1>
+      <h1 class="post-title">MySQL Timestamp类型的一点知识</h1>
         <section id="main">
-          <h5 id="date"> Fri Oct 9, 2015 </h5>
-          <p>在家养病，没事在github上开个博客，以后有想法会在这更新。</p>
-
-<p>工具使用的是<a href="https://gohugo.io">Hugo</a>，一个小巧、快速的静态页面生成引擎，参考了这篇教程<a href="https://gohugo.io/tutorials/github-pages-blog/">Hosting on GitHub Pages</a>。</p>
-
-<p>步骤如下：</p>
+          <h5 id="date"> Sun Oct 25, 2015 </h5>
+          <p>平时在MySQL中要保存时间值，一般都选datetime类型，所以对timestamp类型就不太关心。最近工作中碰到了timestamp，所以稍微查了一下timestamp的相关知识，在此稍作记录。</p>
 
 <ol>
-<li>下载Hugo并安装，然后将hugo加入系统PATH中。（可参考<a href="https://gohugo.io/overview/installing/">Installing Hugo</a>）</li>
-<li>在Github中创建一个 <code>&lt;your-project&gt;-hugo</code> 的repository ，用于保存Hugo的内容。</li>
-<li>在Github中创建一个 <code>&lt;username&gt;.github.io</code> 的repository ，用于保存Hugo中的public目录，也就是博客的静态内容。</li>
-<li><code>git clone &lt;&lt;your-project&gt;-hugo-url&gt; &amp;&amp; cd &lt;your-project&gt;-hugo</code></li>
-<li>本地调试：<code>hugo server --watch</code></li>
-<li>调试无误后，ctrl+c结束调试。<code>rm -rf public</code>(Linux) / <code>rmdir /S/Q public</code>(Windows)</li>
-<li><code>git submodule add git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code>。如果不是第一次提交，则使用<code>git submodule update --init --recursive</code>。</li>
-<li>执行<code>deploy.sh &quot;Your optional commit message&quot;</code></li>
+<li><p>首先，datetime和timestamp的数值范围不同。datetime是8位，表示的时间范围从‘1000-01-01 00:00:00’到‘9999-12-31 23:59:59’。timestamp是4位，表示的时间范围从‘1970-01-01 00:00:01’ UTC到‘2038-01-19 03:14:07’ UTC。</p></li>
+
+<li><p>其次，MySQL会将timestamp类型的值转换成相对于UTC时区进行存储，在检索时再转回当前时区（MySQL Server设置的时区）的值进行展示。所以当MySQL Server的时区设置变化时，timestamp类型的检索结果也会变化。而datetime类型的值不会变化。</p></li>
+
+<li><p>如果想要datetime和timestamp类型insert和update时都可以自动设置为当前时间，可以同时设置 <code>DEFAULT CURRENT_TIMESTAMP</code> 和 <code>ON UPDATE CURRENT_TIMESTAMP</code> 两个属性。前者保证了insert时为当前时间，后者保证每次更新时都会将对应字段修改为当前时间。设置方法如下，两个属性不分先后顺序：</p>
+
+<p><code>CREATE TABLE t1 (
+  ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  dt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);</code></p></li>
 </ol>
-
-<p>稍等片刻，就可以在<a href="http://username.github.io/">http://username.github.io/</a>看到你的博客了。</p>
-
-<p>最后，也不要忘记了提交hugo博客的修改。<strong>注意，必须先提交public的内容，再提交hugo的内容</strong>。</p>
 
         </section>
     </div>
@@ -90,11 +84,11 @@
   <hr />
   <hr />
   
-    <span class="left">
-    &nbsp; <em>&laquo; Previous:</em> <a class="next" href="http://eason-xu.github.io/posts/markdown/">Markdown语法</a>
-    </span>
-  
 
+  
+    <span class="right">
+    <em>Next: </em><a class="next" href="http://eason-xu.github.io/posts/markdown/"> &nbsp; Markdown语法</a> &raquo;
+    </span>
   
 </div>
 
@@ -104,7 +98,7 @@
   <ul class="catlist">
     <li><em>Categories: </em></li>
     
-      <li><a href="http://eason-xu.github.io/categories/%E9%9A%8F%E7%AC%94">随笔</a> </li>
+      <li><a href="http://eason-xu.github.io/categories/%E6%8A%80%E6%9C%AF">技术</a> </li>
     
   </ul>
 </div>
